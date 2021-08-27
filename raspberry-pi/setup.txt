@@ -1,0 +1,24 @@
+Debian Lite installation
+
+Add files to boot partition:
+ssh
+/etc/wpa_supplicant/wpa_supplicant.conf
+  - Copy this to wpa_supplicant.example.conf too, as original will be deleted on startup
+
+Change default password
+$ passwd
+Username: pi
+Password: warthogdogbowl
+
+Configure system
+$ sudo raspi-config
+System Options -> Hostname: warthog
+Interface Options -> Enable SPI
+Interface Options -> Enable I2C (not sure if we need this or not)
+Advanced Options -> Expand Filesystem
+
+Install prerequisites
+$ sudo apt-get install python-spidev python-gpiozero vim
+
+
+
